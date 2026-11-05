@@ -1,0 +1,21 @@
+'#Language "WWB.NET"
+' DEXI PRO - Lanzador (carga DexiPro.dll desde %APPDATA%\DexiPro)
+Imports System
+Imports System.IO
+Imports System.Reflection
+Imports System.Windows.Forms
+
+Sub Main
+    Try
+        Dim ruta As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DexiPro", "DexiPro.dll")
+        If Not File.Exists(ruta) Then
+            MessageBox.Show("No encuentro " & ruta & ". Ejecuta Instalar.bat de Dexi Pro.", "Dexi Pro")
+            Return
+        End If
+        Dim asm As Assembly = Assembly.LoadFrom(ruta)
+        Dim t As Object = asm.GetType("DexiPro.Entry.DexiProPlugin")
+        t.GetMethod("Show").Invoke(Nothing, New Object() {CurrentDoc})
+    Catch ex As Exception
+        MessageBox.Show(ex.ToString(), "Dexi Pro - error")
+    End Try
+End Sub

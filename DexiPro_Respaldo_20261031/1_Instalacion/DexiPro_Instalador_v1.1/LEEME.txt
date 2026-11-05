@@ -1,0 +1,50 @@
+﻿DEXI PRO - Asistente de planeamiento minero dentro de Deswik CAD
+================================================================
+
+El manual completo (instalación, cada función con ejemplos de prompts,
+compatibilidad y problemas frecuentes) está en Manual_DexiPro.pdf, en esta carpeta.
+
+INSTALAR (unos 2 minutos)
+1. Clic derecho en el ZIP > "Extraer todo". No ejecutes nada desde dentro del ZIP.
+2. Cierra Deswik.
+3. Doble clic en Instalar.bat. Si Windows dice "Windows protegió su PC":
+   "Más información" > "Ejecutar de todas formas".
+4. Pega tu clave gratuita de Gemini cuando la pida
+   (se consigue en https://aistudio.google.com/apikey; cada persona usa la suya).
+5. Abre Deswik CAD y un documento: el panel "Dexi Pro" aparece solo. No hace falta crear botones.
+6. Si NO aparece (una sola vez): en Deswik abre el Plugin Manager > "+" > elige
+   %APPDATA%\DexiPro\DexiPro.dll > marca "When opening any document" > Load > OK.
+
+No necesita permisos de administrador.
+Si cierras el panel: Plugin Manager de Deswik > DexiPro > Load (o abre Deswik de nuevo).
+
+VERSIONES DE DESWIK
+Probado en Deswik CAD 2024.2. El instalador lo registra en todas las versiones de
+Deswik que encuentre, y las versiones que instales después lo heredan. Si a tu versión
+le falta algo que una función usa, solo esa función lo avisa; el resto sigue funcionando.
+
+REINSTALAR TRAS FORMATEAR
+Instala Deswik, extrae este paquete y ejecuta Instalar.bat. Para recuperar tus ajustes
+y tu última optimización, copia config.json y optimizador_ultimo.json de tu respaldo a
+%APPDATA%\DexiPro (con Deswik cerrado).
+
+ACTUALIZAR
+Cierra Deswik y ejecuta el Instalar.bat de la versión nueva. Tu clave y tus
+ajustes se conservan.
+
+DESINSTALAR (con Deswik cerrado), cualquiera de estas:
+- Configuración de Windows > Aplicaciones > Aplicaciones instaladas > Dexi Pro.
+- Menú Inicio > Dexi Pro > Desinstalar Dexi Pro.
+- Desinstalar.bat de este paquete.
+
+BOTÓN OPCIONAL DEL PROCESS MAP
+Si prefieres un botón, crea en el Process Map un botón que ejecute una macro y pega
+el contenido de Macro_DexiPro.txt (primera línea: '#Language "WWB.NET").
+
+DÓNDE QUEDA CADA COSA
+- Programa, ajustes (config.json) y logs: %APPDATA%\DexiPro
+- Registro de cada cambio: %APPDATA%\DexiPro\logs\actions-AAAAMMDD.log
+- Clave de Gemini: variable de usuario DEXI_GEMINI_KEY (nunca dentro del programa).
+
+COMPARTIR
+Comparte este ZIP completo. No compartas tu carpeta %APPDATA%\DexiPro ni tu clave.
